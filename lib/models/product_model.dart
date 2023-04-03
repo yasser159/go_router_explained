@@ -9,13 +9,11 @@ class Product {
     Product('Milk', 'Food', 10),
     Product('Rice', 'Food', 5),
     Product('Pasta', 'Food', 20),
-  Product('Steak', 'Food', 15),
-  Product('Eggs', 'Food', 30),
-  Product('T-Shirt', 'Clothes', 2),
-  Product('Jeans', 'Clothes', 1),
-  Product('Shirt', 'Clothes', 1),
-  Product('Skirt', 'Clothes', 1)];
-
-
-
+    Product('Steak', 'Food', 15),
+    Product('Eggs', 'Food', 30),
+    Product('T-Shirt', 'Clothes', 2),
+    Product('Jeans', 'Clothes', 1),
+    Product('Shirt', 'Clothes', 1),
+    Product('Skirt', 'Clothes', 1),
+  ];
 }
