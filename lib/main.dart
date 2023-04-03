@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router_explained/screens/category_screen.dart';
+
+import 'config/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CategoryScreen(),
+      routerConfig: router,
     );
   }
 }
-

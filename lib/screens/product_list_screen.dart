@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 
-class ProductListScreen extends StatelessWidget {
-    const ProductListScreen({Key? key}) : super(key: key);
+import '../models/product_model.dart';
 
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-            appBar: AppBar(
-                title: const Text('Products'),
-                backgroundColor: const Color(0xFF000A1F),
+class ProductListScreen extends StatelessWidget {
+  const ProductListScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    List<Product> products = Product.products;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Products List'),
+        backgroundColor: const Color(0xFF000A1F),
+      ),
+      body: ListView(
+        children: <Widget>[
+          for (final Product product in products)
+            ListTile(
+              title: Text(product.name),
             ),
-            body: Container(),
-        );
-    }
+        ],
+      ),
+    );
+  }
 }
