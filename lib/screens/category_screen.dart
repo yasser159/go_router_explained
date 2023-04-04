@@ -20,10 +20,18 @@ class CategoryScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           Category category = categories[index];
           return ListTile(
-              title: Text(category.name),
-              onTap: () {
-                context.go('/product_list');
-              });
+            title: Text(category.name),
+            onTap: () {
+              return context.go(
+                context.namedLocation('product_list', params: <String, String>{
+                  'category': category.name
+                }, queryParams: <String, String>{
+                  'sort': 'asc',
+                  'filter': '0'
+                }),
+              );
+            },
+          );
         },
       ),
     );

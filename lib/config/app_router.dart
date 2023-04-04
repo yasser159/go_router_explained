@@ -15,10 +15,14 @@ final GoRouter router = GoRouter(
         },
         routes: [
           GoRoute(
-            path: 'product_list', // /procust_list/product
+            path: 'product_list/:category', // /procust_list/product
             name: 'product_list',
             builder: (BuildContext context, GoRouterState state) {
-              return const ProductListScreen();
+              return ProductListScreen(
+                category: state.params['category']!,
+                asc: state.queryParams['sort'] == 'asc',
+                quantity: int.parse(state.queryParams['filter'] ?? '0'),
+              );
             },
           ),
         ]),

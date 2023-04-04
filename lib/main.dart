@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Go Router 5.0.1',
       theme: ThemeData(
         primarySwatch: Colors.blue,
