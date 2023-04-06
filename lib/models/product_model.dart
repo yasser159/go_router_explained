@@ -12,8 +12,8 @@ class Product {
     Product('Steak', 'Food', 15),
     Product('Eggs', 'Food', 30),
     Product('T-Shirt', 'Clothes', 2),
-    Product('Jeans', 'Clothes', 1),
-    Product('Shirt', 'Clothes', 1),
-    Product('Skirt', 'Clothes', 1),
+    Product('Jeans', 'Clothes', 4),
+    Product('Shirt', 'Clothes', 10),
+    Product('Skirt', 'Clothes', 44),
   ];
 }

@@ -2,12 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../screens/category_screen.dart';
+import '../screens/login_screen.dart';
 import '../screens/product_list_screen.dart';
 
-final GoRouter router = GoRouter(
-  debugLogDiagnostics: true,
-  routes: [
-    GoRoute(
+class AppRouter {
+  // final LoginCubit loginCubit;
+  // AppRouter(this.loginCubit);
+
+  late final GoRouter router = GoRouter(
+    debugLogDiagnostics: true,
+    routes: <GoRoute>[
+      GoRoute(
+        path: '/login',
+        name: 'login',
+        builder: (BuildContext context, GoRouterState state) {
+          return const LoginScreen();
+        },
+      ),
+      GoRoute(
         path: '/',
         name: 'home',
         builder: (BuildContext context, GoRouterState state) {
@@ -25,12 +37,22 @@ final GoRouter router = GoRouter(
               );
             },
           ),
-        ]),
-    // GoRoute(
-    //   path: '/product_list',
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const ProductListScreen();
-    //   },
-    // ),
-  ],
-);
+        ],
+      ),
+    ],
+    redirect: (BuildContext context, GoRouterState state) {
+// check if user is logged in.
+      final bool loggedIn = false; // cubit
+// Check if the user is logged in.
+      final bool loggingIn = state.subloc == '/login';
+
+      if (!loggedIn) {
+        return loggingIn ? null : '/login';
+      }
+      if (loggingIn) {
+        return '/';
+      }
+      return null;
+    },
+  );
+}

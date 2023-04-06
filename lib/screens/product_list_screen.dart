@@ -42,6 +42,17 @@ class ProductListScreen extends StatelessWidget {
               );
             },
             icon: const Icon(Icons.sort),
+          ),
+          IconButton(
+            onPressed: () {
+              String sort = asc ? 'desc' : 'asc';
+              return context.goNamed(
+                'product_list',
+                params: <String, String>{'category': category},
+                queryParams: <String, String>{'filter': '10'},
+              );
+            },
+            icon: const Icon(Icons.filter_alt),
           )
         ],
       ),
